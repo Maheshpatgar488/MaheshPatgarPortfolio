@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +6,6 @@
   <title>Mahesh Patgar • Portfolio</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <style>
     :root { --primary: #2f54eb; --secondary: #13c2c2; --bg-dark: #0d1117; --text-light: #f0f6fc; }
     body { font-family: 'Segoe UI', Tahoma, sans-serif; scroll-behavior: smooth; }
@@ -23,10 +21,9 @@
     .resume-btn:hover { background: var(--primary); color: white; }
     footer { background: var(--bg-dark); color: var(--text-light); padding: 1rem 0; text-align: center; }
     footer a { color: var(--secondary); }
-    .contact-card { border: none; border-radius: 1rem; padding: 2rem; box-shadow: 0 10px 25px rgba(0,0,0,0.1); background: white; transition: transform 0.3s ease; height: 100%; word-break: break-word; }
-    .contact-card:hover { transform: translateY(-5px); background: #f9f9f9; }
-    .contact-icon { font-size: 2rem; color: var(--secondary); margin-bottom: 0.5rem; }
-    .contact-card p a { display: inline-block; max-width: 100%; overflow-wrap: break-word; word-wrap: break-word; }
+    .timeline { border-left: 3px solid var(--secondary); padding-left: 20px; margin-left: 10px; }
+    .timeline-item { margin-bottom: 2rem; }
+    .timeline-item h5 { font-weight: 600; }
   </style>
 </head>
 <body>
@@ -53,7 +50,7 @@
   <header class="hero" id="about">
     <div class="container">
       <h1>Hi, I'm Mahesh Patgar</h1>
-      <p>Web Developer | Angular | Django | .NET Web Services</p>
+      <p>Frontend Developer | React.js • Angular • Vite • Django • .NET Services</p>
       <a href="#projects" class="btn btn-light btn-lg me-2">View My Work</a>
       <a href="#resume" class="btn resume-btn btn-lg">Resume</a>
     </div>
@@ -63,12 +60,11 @@
   <section id="skills" class="py-5">
     <div class="container">
       <h2 class="section-title text-center">Skills</h2>
-      <div class="row text-center">
-        <div class="col-md-4"><i class="fa fa-code fa-2x text-primary mb-2"></i><h5>HTML, CSS, JavaScript, Bootstrap</h5></div>
-        <div class="col-md-4"><i class="fa-brands fa-angular fa-2x text-danger mb-2"></i><h5>Angular</h5></div>
-        <div class="col-md-4"><i class="fa-brands fa-react fa-2x text-danger mb-2"></i><h5>React Js/Vite</h5></div>
-        <br>
-        <div class="col-md-4" style="margin-top: 12px;"><i class="fa fa-server fa-2x text-success mb-2"></i><h5>Django, .NET Services</h5></div>
+      <div class="row text-center g-4">
+        <div class="col-md-3"><i class="fa fa-code fa-2x text-primary mb-2"></i><h6>HTML, CSS, JavaScript, Bootstrap, Tailwind</h6></div>
+        <div class="col-md-3"><i class="fa-brands fa-angular fa-2x text-danger mb-2"></i><h6>Angular</h6></div>
+        <div class="col-md-3"><i class="fa-brands fa-react fa-2x text-info mb-2"></i><h6>React.js / Vite</h6></div>
+        <div class="col-md-3"><i class="fa fa-server fa-2x text-success mb-2"></i><h6>Django, Node.js, Express, .NET Services</h6></div>
       </div>
     </div>
   </section>
@@ -78,25 +74,27 @@
     <div class="container">
       <h2 class="section-title text-center">Projects</h2>
       <div class="row g-4">
-        <div class="col-md-6">
+        <div class="col-md-4">
           <div class="card p-4 h-100">
-            <h5>Virun Aesthetics</h5>
-            <p>Responsive beauty salon website with contact form.</p>
-            <a href="https://maheshpatgar488.github.io/virunaesthetics.com-v1" target="_blank" class="btn btn-primary">View Project</a>
+            <h5>Food Villae</h5>
+            <p>React.js + Vite E-commerce Food Store with authentication, cart & dummy payment flow.</p>
+            <a href="https://fooodvillae.netlify.app/" target="_blank" class="btn btn-primary btn-sm">Live Demo</a>
+            <!-- <a href="https://github.com/Maheshpatgar488/Food-Villae" target="_blank" class="btn btn-outline-dark btn-sm">GitHub</a> -->
           </div>
         </div>
-        <div class="col-md-6">
-          <div class="card p-4 h-100">
-            <h5>Fooodvilla</h5>
-            <p>A React/Vite Ecommerce Food Store Website</p>
-            <a href="https://fooodvillae.netlify.app/" target="_blank" class="btn btn-primary">View Project</a>
-          </div>
-        </div>
-        <div class="col-md-6">
+        <div class="col-md-4">
           <div class="card p-4 h-100">
             <h5>Ecomm Food Stores</h5>
-            <p>Responsive store with products, add-to-cart, and contact form.</p>
-            <a href="https://maheshpatgar488.github.io/Ecomm-Food-Stores/" target="_blank" class="btn btn-primary">View Project</a>
+            <p>HTML, CSS, JS, Bootstrap E-commerce site with products, cart (add/update/delete), and EmailJS contact form with embedded map.</p>
+            <a href="https://maheshpatgar488.github.io/Ecomm-Food-Stores/" target="_blank" class="btn btn-primary btn-sm">Live Demo</a>
+            <!-- <a href="https://github.com/Maheshpatgar488/Ecomm-Food-Stores" target="_blank" class="btn btn-outline-dark btn-sm">GitHub</a> -->
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card p-4 h-100">
+            <h5>Virun Aesthetics</h5>
+            <p>Responsive salon website with contact form, deployed via GitHub Pages.</p>
+            <a href="https://maheshpatgar488.github.io/virunaesthetics.com-v1" target="_blank" class="btn btn-primary btn-sm">Live Demo</a>
           </div>
         </div>
       </div>
@@ -107,33 +105,41 @@
   <section id="experience" class="py-5">
     <div class="container">
       <h2 class="section-title text-center">Experience</h2>
-      <div>
-        <h5>Junior Developer | Icampusbuddy Pvt Ltd</h5>
-        <p>May 2024 - Aug 2024</p>
-        <ul>
-          <li>Enhanced a beauty products site with responsive design.</li>
-          <li>Built a working contact form increasing leads by 20%.</li>
-          <li>Worked on .NET webservices.</li>
-          <li>Created school data analytics presentations.</li>
-        </ul>
-        <h5>Angular Developer | Tanush Solutions</h5>
-        <p>Jan 2023 - Jun 2023</p>
-        <ul>
-          <li>Delivered three responsive sites using HTML, CSS & Bootstrap.</li>
-          <li>Optimized performance improving Lighthouse scores.</li>
-          <li>Implemented cookie functionality for UX.</li>
-          <li>Deployed to Plesk server.</li>
-        </ul>
+      <div class="timeline">
+        <div class="timeline-item">
+          <h5>React Developer | Meliorate Technology Pvt Ltd</h5>
+          <p class="text-muted">Aug 2024 – Present</p>
+          <ul>
+            <li>Developing responsive React apps with API integrations and authentication.</li>
+            <li>Collaborating with cross-functional teams for scalable solutions.</li>
+          </ul>
+        </div>
+        <div class="timeline-item">
+          <h5>Junior Developer | Icampusbuddy Pvt Ltd</h5>
+          <p class="text-muted">May 2024 – Aug 2024</p>
+          <ul>
+            <li>Delivered responsive beauty products site with working EmailJS form (20% more leads).</li>
+            <li>Integrated .NET web services and created school data analytics presentations.</li>
+          </ul>
+        </div>
+        <div class="timeline-item">
+          <h5>Angular & Web Developer | Tanush Solutions</h5>
+          <p class="text-muted">Jan 2023 – Jun 2023</p>
+          <ul>
+            <li>Developed and deployed 3+ Angular-based websites, boosting performance scores by 25%.</li>
+            <li>Implemented cookies, optimized assets, and deployed via Plesk server.</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Education -->
   <section id="education" class="py-5 bg-light">
-    <div class="container">
-      <h2 class="section-title text-center">Education</h2>
-      <p class="text-center">B.Sc. in Information Technology (2017-2020) - DTSS College of Science & Commerce</p>
-      <p class="text-center text-muted">Coursework: Web Development, Data Structures, SQL, DBMS • Frameworks: Django, Flask, Bootstrap, Angular</p>
+    <div class="container text-center">
+      <h2 class="section-title">Education</h2>
+      <p>B.Sc. Information Technology (2017–2020) – DTSS College of Science & Commerce</p>
+      <p class="text-muted">CGPA: 7.3 / 10 | Coursework: Web Development, Data Structures, SQL, DBMS</p>
     </div>
   </section>
 
@@ -141,7 +147,7 @@
   <section id="resume" class="py-5">
     <div class="container text-center">
       <h2 class="section-title">Resume</h2>
-      <p>You can view and download my resume here:</p>
+      <p>You can view and download my latest resume here:</p>
       <a href="https://drive.google.com/file/d/1bV6vooQXN1GUwfsoJG288j2HiTGkgJAO/view" target="_blank" class="btn resume-btn btn-lg"><i class="fa-solid fa-file-lines me-2"></i>View / Download Resume</a>
     </div>
   </section>
@@ -151,10 +157,10 @@
     <div class="container">
       <h2 class="section-title text-center">Contact</h2>
       <div class="row g-4 justify-content-center">
-        <div class="col-md-3 col-sm-6"><div class="contact-card text-center"><i class="fa-solid fa-envelope contact-icon"></i><h5>Email</h5><p><a href="mailto:maheshpatgar488@gmail.com">maheshpatgar488@gmail.com</a></p></div></div>
-        <div class="col-md-3 col-sm-6"><div class="contact-card text-center"><i class="fa-solid fa-phone contact-icon"></i><h5>Phone</h5><p><a href="tel:+919967949880">+91 99679 49880</a></p></div></div>
-        <div class="col-md-3 col-sm-6"><div class="contact-card text-center"><i class="fab fa-github contact-icon"></i><h5>GitHub</h5><p><a href="https://github.com/Maheshpatgar488" target="_blank">Maheshpatgar488</a></p></div></div>
-        <div class="col-md-3 col-sm-6"><div class="contact-card text-center"><i class="fab fa-linkedin contact-icon"></i><h5>LinkedIn</h5><p><a href="https://www.linkedin.com/in/mahesh-patgar-795979360/" target="_blank">Mahesh Patgar</a></p></div></div>
+        <div class="col-md-3 col-sm-6"><div class="card text-center p-3"><i class="fa-solid fa-envelope fa-2x mb-2 text-secondary"></i><h6>Email</h6><p><a href="mailto:maheshpatgar488@gmail.com">maheshpatgar488@gmail.com</a></p></div></div>
+        <div class="col-md-3 col-sm-6"><div class="card text-center p-3"><i class="fa-solid fa-phone fa-2x mb-2 text-secondary"></i><h6>Phone</h6><p><a href="tel:+919967949880">+91 99679 49880</a></p></div></div>
+        <div class="col-md-3 col-sm-6"><div class="card text-center p-3"><i class="fab fa-github fa-2x mb-2 text-secondary"></i><h6>GitHub</h6><p><a href="https://github.com/Maheshpatgar488" target="_blank">github.com/Maheshpatgar488</a></p></div></div>
+        <div class="col-md-3 col-sm-6"><div class="card text-center p-3"><i class="fab fa-linkedin fa-2x mb-2 text-secondary"></i><h6>LinkedIn</h6><p><a href="https://www.linkedin.com/in/mahesh-patgar-795979360/" target="_blank">linkedin.com/in/mahesh-patgar</a></p></div></div>
       </div>
     </div>
   </section>
@@ -166,7 +172,5 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script>AOS.init({ once: true, duration: 700 });</script>
 </body>
 </html>
