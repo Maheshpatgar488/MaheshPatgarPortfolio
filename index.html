@@ -7,23 +7,131 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
   <style>
-    :root { --primary: #2f54eb; --secondary: #13c2c2; --bg-dark: #0d1117; --text-light: #f0f6fc; }
-    body { font-family: 'Segoe UI', Tahoma, sans-serif; scroll-behavior: smooth; }
-    nav.navbar { background: linear-gradient(90deg, var(--secondary), var(--primary)); }
-    nav .nav-link { color: white !important; font-weight: 500; }
-    header.hero { background: linear-gradient(120deg, var(--secondary), var(--primary)); color: white; padding: 6rem 0; text-align: center; }
-    header.hero h1 { font-weight: 700; }
-    .section-title { font-weight: 700; margin-bottom: 2rem; position: relative; display: inline-block; }
-    .section-title::after { content: ""; position: absolute; width: 50%; height: 3px; background: var(--secondary); left: 25%; bottom: -8px; border-radius: 2px; }
-    .card { border: none; border-radius: 1rem; box-shadow: 0 10px 25px rgba(0,0,0,0.1); transition: transform 0.3s ease; }
-    .card:hover { transform: translateY(-5px); }
-    .resume-btn { background: var(--secondary); color: white; font-weight: 600; }
-    .resume-btn:hover { background: var(--primary); color: white; }
-    footer { background: var(--bg-dark); color: var(--text-light); padding: 1rem 0; text-align: center; }
-    footer a { color: var(--secondary); }
-    .timeline { border-left: 3px solid var(--secondary); padding-left: 20px; margin-left: 10px; }
-    .timeline-item { margin-bottom: 2rem; }
-    .timeline-item h5 { font-weight: 600; }
+    :root {
+      --primary: #2f54eb;
+      --secondary: #13c2c2;
+      --dark: #0d1117;
+      --light: #f8f9fa;
+      --text: #e6edf3;
+    }
+    body {
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background: var(--dark);
+      color: var(--text);
+      scroll-behavior: smooth;
+    }
+
+    /* Navbar */
+    nav.navbar {
+      background: rgba(13, 17, 23, 0.95);
+      backdrop-filter: blur(10px);
+    }
+    nav .nav-link {
+      color: var(--text) !important;
+      margin-left: 15px;
+      font-weight: 500;
+    }
+    nav .nav-link:hover {
+      color: var(--secondary) !important;
+    }
+
+    /* Hero */
+    header.hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      background: linear-gradient(120deg, var(--primary), var(--secondary));
+      color: white;
+    }
+    header.hero h1 {
+      font-size: 3rem;
+      font-weight: 700;
+    }
+    header.hero p {
+      font-size: 1.3rem;
+      margin-bottom: 2rem;
+    }
+    .btn-main {
+      background: var(--secondary);
+      color: white;
+      border-radius: 30px;
+      padding: 0.75rem 1.5rem;
+      font-weight: 600;
+      margin: 5px;
+      transition: 0.3s;
+    }
+    .btn-main:hover {
+      background: var(--primary);
+    }
+    .btn-outline-light:hover {
+      background: white;
+      color: var(--primary) !important;
+    }
+
+    /* Section Titles */
+    .section-title {
+      font-weight: 700;
+      margin-bottom: 3rem;
+      text-align: center;
+      color: var(--secondary);
+    }
+
+    /* Skills */
+    .skill-badge {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 25px;
+      padding: 10px 20px;
+      margin: 5px;
+      display: inline-block;
+      transition: 0.3s;
+    }
+    .skill-badge:hover {
+      background: var(--secondary);
+      color: white;
+    }
+
+    /* Cards */
+    .card {
+      background: #161b22;
+      border: 1px solid #30363d;
+      border-radius: 1rem;
+      transition: all 0.3s ease;
+      color: var(--text);
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: var(--secondary);
+    }
+
+    /* Timeline */
+    .timeline {
+      border-left: 3px solid var(--secondary);
+      padding-left: 20px;
+    }
+    .timeline-item {
+      margin-bottom: 2rem;
+    }
+    .timeline-item h5 {
+      color: var(--secondary);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 1.5rem 0;
+      background: #161b22;
+      border-top: 1px solid #30363d;
+      color: #8b949e;
+    }
+    footer a {
+      color: var(--secondary);
+      text-decoration: none;
+    }
+    footer a:hover {
+      color: white;
+    }
   </style>
 </head>
 <body>
@@ -31,7 +139,9 @@
   <nav class="navbar navbar-expand-lg fixed-top">
     <div class="container">
       <a class="navbar-brand fw-bold text-white" href="#">Mahesh Patgar</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav"><span class="navbar-toggler-icon"></span></button>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
       <div id="nav" class="collapse navbar-collapse">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
@@ -50,51 +160,57 @@
   <header class="hero" id="about">
     <div class="container">
       <h1>Hi, I'm Mahesh Patgar</h1>
-      <p>Frontend Developer | React.js • Angular • Vite • Django • .NET Services</p>
-      <a href="#projects" class="btn btn-light btn-lg me-2">View My Work</a>
-      <a href="#resume" class="btn resume-btn btn-lg">Resume</a>
+      <p>Frontend Developer | React.js • Angular • Vite • Django • .NET</p>
+      <a href="#projects" class="btn btn-main">View My Work</a>
+      <a href="#resume" class="btn btn-outline-light">Download Resume</a>
     </div>
   </header>
 
   <!-- Skills -->
   <section id="skills" class="py-5">
-    <div class="container">
-      <h2 class="section-title text-center">Skills</h2>
-      <div class="row text-center g-4">
-        <div class="col-md-3"><i class="fa fa-code fa-2x text-primary mb-2"></i><h6>HTML, CSS, JavaScript, Bootstrap, Tailwind</h6></div>
-        <div class="col-md-3"><i class="fa-brands fa-angular fa-2x text-danger mb-2"></i><h6>Angular</h6></div>
-        <div class="col-md-3"><i class="fa-brands fa-react fa-2x text-info mb-2"></i><h6>React.js / Vite</h6></div>
-        <div class="col-md-3"><i class="fa fa-server fa-2x text-success mb-2"></i><h6>Django, Node.js, Express, .NET Services</h6></div>
+    <div class="container text-center">
+      <h2 class="section-title">Skills</h2>
+      <div>
+        <span class="skill-badge">HTML</span>
+        <span class="skill-badge">CSS</span>
+        <span class="skill-badge">JavaScript</span>
+        <span class="skill-badge">Bootstrap</span>
+        <span class="skill-badge">Tailwind</span>
+        <span class="skill-badge">React.js</span>
+        <span class="skill-badge">Vite</span>
+        <span class="skill-badge">Angular</span>
+        <span class="skill-badge">Django</span>
+        <span class="skill-badge">Node.js</span>
+        <span class="skill-badge">Express</span>
+        <!-- <span class="skill-badge">.NET</span> -->
       </div>
     </div>
   </section>
 
   <!-- Projects -->
-  <section id="projects" class="py-5 bg-light">
+  <section id="projects" class="py-5 bg-dark">
     <div class="container">
-      <h2 class="section-title text-center">Projects</h2>
+      <h2 class="section-title">Projects</h2>
       <div class="row g-4">
         <div class="col-md-4">
           <div class="card p-4 h-100">
             <h5>Food Villae</h5>
             <p>React.js + Vite E-commerce Food Store with authentication, cart & dummy payment flow.</p>
-            <a href="https://fooodvillae.netlify.app/" target="_blank" class="btn btn-primary btn-sm">Live Demo</a>
-            <!-- <a href="https://github.com/Maheshpatgar488/Food-Villae" target="_blank" class="btn btn-outline-dark btn-sm">GitHub</a> -->
+            <a href="https://fooodvillae.netlify.app/" target="_blank" class="btn btn-main btn-sm">Live Demo</a>
           </div>
         </div>
         <div class="col-md-4">
           <div class="card p-4 h-100">
             <h5>Ecomm Food Stores</h5>
-            <p>HTML, CSS, JS, Bootstrap E-commerce site with products, cart (add/update/delete), and EmailJS contact form with embedded map.</p>
-            <a href="https://maheshpatgar488.github.io/Ecomm-Food-Stores/" target="_blank" class="btn btn-primary btn-sm">Live Demo</a>
-            <!-- <a href="https://github.com/Maheshpatgar488/Ecomm-Food-Stores" target="_blank" class="btn btn-outline-dark btn-sm">GitHub</a> -->
+            <p>HTML, CSS, JS, Bootstrap E-commerce site with cart, checkout & EmailJS form with map.</p>
+            <a href="https://maheshpatgar488.github.io/Ecomm-Food-Stores/" target="_blank" class="btn btn-main btn-sm">Live Demo</a>
           </div>
         </div>
         <div class="col-md-4">
           <div class="card p-4 h-100">
             <h5>Virun Aesthetics</h5>
             <p>Responsive salon website with contact form, deployed via GitHub Pages.</p>
-            <a href="https://maheshpatgar488.github.io/virunaesthetics.com-v1" target="_blank" class="btn btn-primary btn-sm">Live Demo</a>
+            <a href="https://maheshpatgar488.github.io/virunaesthetics.com-v1" target="_blank" class="btn btn-main btn-sm">Live Demo</a>
           </div>
         </div>
       </div>
@@ -104,7 +220,7 @@
   <!-- Experience -->
   <section id="experience" class="py-5">
     <div class="container">
-      <h2 class="section-title text-center">Experience</h2>
+      <h2 class="section-title">Experience</h2>
       <div class="timeline">
         <div class="timeline-item">
           <h5>React Developer | Meliorate Technology Pvt Ltd</h5>
@@ -118,8 +234,8 @@
           <h5>Junior Developer | Icampusbuddy Pvt Ltd</h5>
           <p class="text-muted">May 2024 – Aug 2024</p>
           <ul>
-            <li>Delivered responsive beauty products site with working EmailJS form (20% more leads).</li>
-            <li>Integrated .NET web services and created school data analytics presentations.</li>
+            <li>Built responsive beauty products site with EmailJS form (20% lead increase).</li>
+            <li>Integrated .NET web services & created data analytics dashboards.</li>
           </ul>
         </div>
         <div class="timeline-item">
@@ -127,7 +243,7 @@
           <p class="text-muted">Jan 2023 – Jun 2023</p>
           <ul>
             <li>Developed and deployed 3+ Angular-based websites, boosting performance scores by 25%.</li>
-            <li>Implemented cookies, optimized assets, and deployed via Plesk server.</li>
+            <li>Optimized assets, implemented cookies, and deployed via Plesk server.</li>
           </ul>
         </div>
       </div>
@@ -135,7 +251,7 @@
   </section>
 
   <!-- Education -->
-  <section id="education" class="py-5 bg-light">
+  <section id="education" class="py-5 bg-dark">
     <div class="container text-center">
       <h2 class="section-title">Education</h2>
       <p>B.Sc. Information Technology (2017–2020) – DTSS College of Science & Commerce</p>
@@ -148,26 +264,53 @@
     <div class="container text-center">
       <h2 class="section-title">Resume</h2>
       <p>You can view and download my latest resume here:</p>
-      <a href="https://drive.google.com/file/d/1bV6vooQXN1GUwfsoJG288j2HiTGkgJAO/view" target="_blank" class="btn resume-btn btn-lg"><i class="fa-solid fa-file-lines me-2"></i>View / Download Resume</a>
+      <a href="https://drive.google.com/file/d/1bV6vooQXN1GUwfsoJG288j2HiTGkgJAO/view" target="_blank" class="btn btn-main btn-lg">
+        <i class="fa-solid fa-file-lines me-2"></i>View / Download Resume
+      </a>
     </div>
   </section>
 
   <!-- Contact -->
-  <section id="contact" class="py-5 bg-light">
+  <section id="contact" class="py-5 bg-dark">
     <div class="container">
       <h2 class="section-title text-center">Contact</h2>
       <div class="row g-4 justify-content-center">
-        <div class="col-md-3 col-sm-6"><div class="card text-center p-3"><i class="fa-solid fa-envelope fa-2x mb-2 text-secondary"></i><h6>Email</h6><p><a href="mailto:maheshpatgar488@gmail.com">maheshpatgar488@gmail.com</a></p></div></div>
-        <div class="col-md-3 col-sm-6"><div class="card text-center p-3"><i class="fa-solid fa-phone fa-2x mb-2 text-secondary"></i><h6>Phone</h6><p><a href="tel:+919967949880">+91 99679 49880</a></p></div></div>
-        <div class="col-md-3 col-sm-6"><div class="card text-center p-3"><i class="fab fa-github fa-2x mb-2 text-secondary"></i><h6>GitHub</h6><p><a href="https://github.com/Maheshpatgar488" target="_blank">github.com/Maheshpatgar488</a></p></div></div>
-        <div class="col-md-3 col-sm-6"><div class="card text-center p-3"><i class="fab fa-linkedin fa-2x mb-2 text-secondary"></i><h6>LinkedIn</h6><p><a href="https://www.linkedin.com/in/mahesh-patgar-795979360/" target="_blank">linkedin.com/in/mahesh-patgar</a></p></div></div>
+        <div class="col-md-3 col-sm-6">
+          <div class="card text-center p-3">
+            <i class="fa-solid fa-envelope fa-2x mb-2 text-secondary"></i>
+            <h6>Email</h6>
+            <p><a href="mailto:maheshpatgar488@gmail.com">maheshpatgar488@gmail.com</a></p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="card text-center p-3">
+            <i class="fa-solid fa-phone fa-2x mb-2 text-secondary"></i>
+            <h6>Phone</h6>
+            <p><a href="tel:+919967949880">+91 99679 49880</a></p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="card text-center p-3">
+            <i class="fab fa-github fa-2x mb-2 text-secondary"></i>
+            <h6>GitHub</h6>
+            <p><a href="https://github.com/Maheshpatgar488" target="_blank">github.com/Maheshpatgar488</a></p>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="card text-center p-3">
+            <i class="fab fa-linkedin fa-2x mb-2 text-secondary"></i>
+            <h6>LinkedIn</h6>
+            <p><a href="https://www.linkedin.com/in/mahesh-patgar-795979360/" target="_blank">linkedin.com/in/mahesh-patgar</a></p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
+  <!-- Footer -->
   <footer>
     <div class="container">
-      <p>© 2025 Mahesh Patgar. All rights reserved.</p>
+      <p>© 2025 Mahesh Patgar. All rights reserved. | <a href="#about">Back to Top</a></p>
     </div>
   </footer>
 
